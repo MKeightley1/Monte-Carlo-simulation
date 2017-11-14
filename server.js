@@ -13,7 +13,6 @@ http.createServer(function (request, res) {
 	circleDiameter = 0;
 	n = 0;
 	iterations = 0; 
-	console.log(query);
 	
 	if(query.gridSize&&query.circleDiameter&&query.n&&query.iterations){
 		//input parameters and convert to numbers
