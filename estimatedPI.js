@@ -1,14 +1,23 @@
-exports.myDateTime = function ( gridsize , circle_diameter, n, iterations ) {
+
+//gets an array - checks if in circle area
+exports.getPointsWithinCircle = function ( gridsize , plot_array, circle_diameter) {
+	plots_in_circle=0;
+	plots_out_circle=0;
+	grid_middle=0
+	grid_middle = gridsize/2;
 	
-	//create an array of 100 points on the grid
 	
 	
 	
 	
-	
-	
-    return Math.floor((Math.random() * n) + 1);
+    return 1;
 };
+
+
+
+
+
+
 
 //create an array of 100 points on the grid
 exports.generateGridPoints = function (gridsize, n) {
@@ -31,10 +40,13 @@ exports.generateGridPoints = function (gridsize, n) {
 		  }
 		})
 		//if plot not on grid - add to array of plots
+		plot_array =[];
+		plot_array[0]=x;
+		plot_array[1]=y;
 		if(!plot_status){
-			plotPoint_array.push([x,y]);
+			plotPoint_array[plotPoint_array.length+1]=plot_array;
 		}
 	}
 
-    return plotPoint_array;
+    return plotPoint_array.length;
 };
